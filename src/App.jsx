@@ -2,13 +2,12 @@ import './App.css'
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
-import VisualEditAgent from '@/lib/VisualEditAgent'
 import NavigationTracker from '@/lib/NavigationTracker'
 import { pagesConfig } from './pages.config'
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
-import UserNotRegisteredError from '@/components/UserNotRegisteredError';
+import Login from '@/pages/Login';
 import LegalDocumentWriter from '@/pages/LegalDocumentWriter';
 import SignDocument from '@/pages/SignDocument';
 
@@ -20,28 +19,28 @@ const LayoutWrapper = ({ children, currentPageName }) => Layout ?
   <Layout currentPageName={currentPageName}>{children}</Layout>
   : <>{children}</>;
 
-// Public pages that don't require authentication
 const PUBLIC_PAGES = ['SignDocument', 'WorkerIntake', 'ClientDocumentUpload', 'FineGuide', 'TalushCheck'];
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, isAuthenticated, navigateToLogin } = useAuth();
   const location = useLocation();
   const pathName = location.pathname.replace('/', '');
-  
-  // If this is a public page, skip auth entirely and render directly
-  const isPublic = PUBLIC_PAGES.some(p => pathName === p || pathName.startsWith(p + '?'));
-  if (isPublic) {
-   // Map public page names to their components
-   if (pathName === 'SignDocument' || pathName.startsWith('SignDocument?')) {
-     return <SignDocument />;
-   }
-   const PublicPage = pagesConfig.Pages[PUBLIC_PAGES.find(p => pathName === p || pathName.startsWith(p + '?'))];
-   if (PublicPage) {
-     return <PublicPage />;
-   }
+
+  if (pathName === 'login') {
+    return <Login />;
   }
 
-  // Show loading spinner while checking app public settings or auth
+  const isPublic = PUBLIC_PAGES.some(p => pathName === p || pathName.startsWith(p + '?'));
+  if (isPublic) {
+    if (pathName === 'SignDocument' || pathName.startsWith('SignDocument?')) {
+      return <SignDocument />;
+    }
+    const PublicPage = pagesConfig.Pages[PUBLIC_PAGES.find(p => pathName === p || pathName.startsWith(p + '?'))];
+    if (PublicPage) {
+      return <PublicPage />;
+    }
+  }
+
   if (isLoadingPublicSettings || isLoadingAuth) {
     return (
       <div className="fixed inset-0 flex items-center justify-center">
@@ -50,18 +49,11 @@ const AuthenticatedApp = () => {
     );
   }
 
-  // Handle authentication errors
-  if (authError) {
-    if (authError.type === 'user_not_registered') {
-      return <UserNotRegisteredError />;
-    } else if (authError.type === 'auth_required') {
-      // Redirect to login automatically
-      navigateToLogin();
-      return null;
-    }
+  if (!isAuthenticated) {
+    navigateToLogin();
+    return null;
   }
 
-  // Render the main app
   return (
     <Routes>
       <Route path="/" element={
@@ -88,7 +80,6 @@ const AuthenticatedApp = () => {
 
 
 function App() {
-
   return (
     <AuthProvider>
       <QueryClientProvider client={queryClientInstance}>
@@ -97,7 +88,6 @@ function App() {
           <AuthenticatedApp />
         </Router>
         <Toaster />
-        <VisualEditAgent />
       </QueryClientProvider>
     </AuthProvider>
   )
