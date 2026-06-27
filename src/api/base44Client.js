@@ -322,14 +322,17 @@ const auth = {
   },
 };
 
-// Functions shim — maps BASE44 cloud function calls to Supabase Edge Functions
+// Functions shim — calls our Vercel API routes at /api/<functionName>
 const functions = {
   async invoke(functionName, args) {
-    const { data, error } = await supabase.functions.invoke(functionName, {
-      body: args,
+    const resp = await fetch(`/api/${functionName}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(args),
     });
-    if (error) throw error;
-    return data;
+    const json = await resp.json();
+    if (!resp.ok) throw new Error(json.error || `Function ${functionName} failed`);
+    return json;
   },
 };
 
