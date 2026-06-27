@@ -1,0 +1,63 @@
+{
+  "name": "SignatureField",
+  "type": "object",
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "description": "\u05de\u05d6\u05d4\u05d4 \u05d1\u05e7\u05e9\u05ea \u05d4\u05d7\u05ea\u05d9\u05de\u05d4"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "signature",
+        "text",
+        "date",
+        "checkbox",
+        "initials"
+      ],
+      "default": "signature",
+      "description": "\u05e1\u05d5\u05d2 \u05d4\u05e9\u05d3\u05d4"
+    },
+    "page": {
+      "type": "number",
+      "default": 1,
+      "description": "\u05de\u05e1\u05e4\u05e8 \u05e2\u05de\u05d5\u05d3"
+    },
+    "x": {
+      "type": "number",
+      "description": "\u05de\u05d9\u05e7\u05d5\u05dd X \u05d1\u05d0\u05d7\u05d5\u05d6\u05d9\u05dd"
+    },
+    "y": {
+      "type": "number",
+      "description": "\u05de\u05d9\u05e7\u05d5\u05dd Y \u05d1\u05d0\u05d7\u05d5\u05d6\u05d9\u05dd"
+    },
+    "width": {
+      "type": "number",
+      "description": "\u05e8\u05d5\u05d7\u05d1 \u05d1\u05d0\u05d7\u05d5\u05d6\u05d9\u05dd"
+    },
+    "height": {
+      "type": "number",
+      "description": "\u05d2\u05d5\u05d1\u05d4 \u05d1\u05d0\u05d7\u05d5\u05d6\u05d9\u05dd"
+    },
+    "label": {
+      "type": "string",
+      "description": "\u05ea\u05d5\u05d5\u05d9\u05ea \u05d4\u05e9\u05d3\u05d4"
+    },
+    "required": {
+      "type": "boolean",
+      "default": true,
+      "description": "\u05d4\u05d0\u05dd \u05d7\u05d5\u05d1\u05d4"
+    },
+    "value": {
+      "type": "string",
+      "description": "\u05d4\u05e2\u05e8\u05da \u05e9\u05de\u05d5\u05dc\u05d0 (\u05dc\u05d0\u05d7\u05e8 \u05d7\u05ea\u05d9\u05de\u05d4)"
+    }
+  },
+  "required": [
+    "request_id",
+    "type",
+    "page",
+    "x",
+    "y"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "NotificationLog",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "description": "The case ID associated with the notification"
+    },
+    "hearing_date": {
+      "type": "string",
+      "format": "date",
+      "description": "The date of the hearing"
+    },
+    "alert_type": {
+      "type": "string",
+      "description": "Type of alert sent (e.g., '1_day_before', '7_days_before')"
+    },
+    "sent_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the notification was sent"
+    },
+    "recipient": {
+      "type": "string",
+      "description": "Phone number or recipient identifier"
+    }
+  },
+  "required": [
+    "case_id",
+    "hearing_date",
+    "alert_type"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

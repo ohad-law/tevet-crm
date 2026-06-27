@@ -1,0 +1,269 @@
+{
+  "name": "Case",
+  "type": "object",
+  "properties": {
+    "case_number": {
+      "type": "string",
+      "description": "\u05de\u05e1\u05e4\u05e8 \u05ea\u05d9\u05e7"
+    },
+    "case_name": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05d4\u05ea\u05d9\u05e7"
+    },
+    "client_id": {
+      "type": "string",
+      "description": "\u05de\u05d6\u05d4\u05d4 \u05dc\u05e7\u05d5\u05d7"
+    },
+    "folder_id": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05e7\u05d9\u05d9\u05d4 \u05e8\u05d0\u05e9\u05d9\u05ea (\u05e7\u05d8\u05d2\u05d5\u05e8\u05d9\u05d4)"
+    },
+    "subfolder_id": {
+      "type": "string",
+      "description": "\u05ea\u05ea-\u05ea\u05d9\u05e7\u05d9\u05d9\u05d4 (\u05dc\u05e7\u05d5\u05d7/\u05e4\u05e8\u05d5\u05d9\u05e7\u05d8)"
+    },
+    "google_drive_folder_id": {
+      "type": "string",
+      "description": "\u05de\u05d6\u05d4\u05d4 \u05ea\u05d9\u05e7\u05d9\u05d9\u05d4 \u05d1-Google Drive"
+    },
+    "case_type": {
+      "type": "string",
+      "enum": [
+        "\u05d3\u05d9\u05e0\u05d9 \u05e2\u05d1\u05d5\u05d3\u05d4 - \u05ea\u05d1\u05d9\u05e2\u05d4",
+        "\u05d3\u05d9\u05e0\u05d9 \u05e2\u05d1\u05d5\u05d3\u05d4 - \u05e2\u05d5\u05d1\u05d3\u05d9\u05dd \u05d6\u05e8\u05d9\u05dd",
+        "\u05d3\u05d9\u05e0\u05d9 \u05e2\u05d1\u05d5\u05d3\u05d4 - \u05e4\u05d9\u05d8\u05d5\u05e8\u05d9\u05dd",
+        "\u05d3\u05d9\u05e0\u05d9 \u05e2\u05d1\u05d5\u05d3\u05d4 - \u05e9\u05db\u05e8",
+        "\u05ea\u05d1\u05d9\u05e2\u05d4 \u05db\u05e1\u05e4\u05d9\u05ea",
+        "\u05d7\u05d3\u05dc\u05d5\u05ea \u05e4\u05d9\u05e8\u05e2\u05d5\u05df",
+        "\u05d0\u05d6\u05e8\u05d7\u05d9 - \u05d0\u05d7\u05e8"
+      ],
+      "description": "\u05e1\u05d5\u05d2 \u05d4\u05ea\u05d9\u05e7"
+    },
+    "parties": {
+      "type": "string",
+      "description": "\u05e9\u05de\u05d5\u05ea \u05d4\u05e6\u05d3\u05d3\u05d9\u05dd \u05dc\u05ea\u05d9\u05e7 (\u05ea\u05d5\u05d1\u05e2 \u05e0\u05d2\u05d3 \u05e0\u05ea\u05d1\u05e2)"
+    },
+    "case_description": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05de\u05e4\u05d5\u05e8\u05d8 \u05e9\u05dc \u05d4\u05de\u05e7\u05e8\u05d4 \u05d5\u05d4\u05e0\u05e1\u05d9\u05d1\u05d5\u05ea"
+    },
+    "case_detailed_description": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05e2\u05e9\u05d9\u05e8 \u05d5\u05de\u05e4\u05d5\u05e8\u05d8 (HTML) \u05e9\u05dc \u05d4\u05de\u05e7\u05e8\u05d4, \u05d8\u05e2\u05e0\u05d5\u05ea, \u05e8\u05d0\u05d9\u05d5\u05ea \u05d5\u05e9\u05dc\u05d1\u05d9\u05dd"
+    },
+    "defendant_name": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05d4\u05e0\u05ea\u05d1\u05e2 (\u05d7\u05d1\u05e8\u05d4 \u05d0\u05d5 \u05d0\u05d3\u05dd)"
+    },
+    "defendant_id": {
+      "type": "string",
+      "description": "\u05d7.\u05e4 \u05d0\u05d5 \u05ea.\u05d6 \u05e9\u05dc \u05d4\u05e0\u05ea\u05d1\u05e2"
+    },
+    "defendant_address": {
+      "type": "string",
+      "description": "\u05db\u05ea\u05d5\u05d1\u05ea \u05d4\u05e0\u05ea\u05d1\u05e2"
+    },
+    "defendant_contact": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05e9 \u05e7\u05e9\u05e8/\u05e0\u05e6\u05d9\u05d2 \u05de\u05d8\u05e2\u05dd \u05d4\u05e0\u05ea\u05d1\u05e2"
+    },
+    "defendant_phone": {
+      "type": "string",
+      "description": "\u05d8\u05dc\u05e4\u05d5\u05df \u05d4\u05e0\u05ea\u05d1\u05e2"
+    },
+    "employment_start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05ea\u05d7\u05d9\u05dc\u05ea \u05e2\u05d1\u05d5\u05d3\u05d4 (\u05d0\u05dd \u05e8\u05dc\u05d5\u05d5\u05e0\u05d8\u05d9)"
+    },
+    "employment_end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05e1\u05d9\u05d5\u05dd \u05e2\u05d1\u05d5\u05d3\u05d4 (\u05d0\u05dd \u05e8\u05dc\u05d5\u05d5\u05e0\u05d8\u05d9)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "\u05ea\u05d9\u05e7 \u05e0\u05db\u05e0\u05e1",
+        "\u05e2\u05e8\u05d9\u05db\u05ea \u05db\u05ea\u05d1 \u05ea\u05d1\u05d9\u05e2\u05d4",
+        "\u05de\u05e2\u05e7\u05d1 \u05de\u05e1\u05e4\u05e8 \u05d4\u05dc\u05d9\u05da \u05d1\u05e0\u05d8",
+        "\u05de\u05e1\u05d9\u05e8\u05d4 \u05d0\u05d9\u05e9\u05d9\u05ea/\u05d3\u05d5\u05d0\u05e8 \u05d9\u05e9\u05e8\u05d0\u05dc",
+        "\u05d4\u05d5\u05d3\u05e2\u05d4 \u05e2\u05dc \u05d4\u05de\u05e6\u05d0\u05d4",
+        "\u05ea\u05e6\u05d4\u05d9\u05e8 \u05d2\u05d9\u05dc\u05d5\u05d9 \u05de\u05e1\u05de\u05db\u05d9\u05dd",
+        "\u05ea\u05e6\u05d4\u05d9\u05e8 \u05e2\u05d3\u05d5\u05ea \u05e8\u05d0\u05e9\u05d9\u05ea",
+        "\u05d4\u05d5\u05db\u05d7\u05d5\u05ea",
+        "\u05e1\u05d9\u05db\u05d5\u05de\u05d9\u05dd",
+        "\u05e4\u05e1\u05e7 \u05d3\u05d9\u05df",
+        "\u05d0\u05e8\u05db\u05d9\u05d5\u05df"
+      ],
+      "default": "\u05ea\u05d9\u05e7 \u05e0\u05db\u05e0\u05e1",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1 \u05d4\u05ea\u05d9\u05e7"
+    },
+    "value": {
+      "type": "number",
+      "description": "\u05e2\u05e8\u05da \u05d4\u05ea\u05d9\u05e7 \u05d1\u05e9\u05e7\u05dc\u05d9\u05dd"
+    },
+    "potential_fee": {
+      "type": "number",
+      "description": "\u05e6\u05e4\u05d9 \u05e9\u05db\u05e8 \u05d8\u05e8\u05d7\u05d4 \u05d1\u05e9\u05e7\u05dc\u05d9\u05dd"
+    },
+    "open_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05e4\u05ea\u05d9\u05d7\u05ea \u05d4\u05ea\u05d9\u05e7"
+    },
+    "target_close_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d9\u05e2\u05d3 \u05dc\u05e1\u05d2\u05d9\u05e8\u05d4"
+    },
+    "last_status_change_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05e9\u05d9\u05e0\u05d5\u05d9 \u05e1\u05d8\u05d8\u05d5\u05e1 \u05d0\u05d7\u05e8\u05d5\u05df"
+    },
+    "assigned_to": {
+      "type": "string",
+      "description": "\u05e2\u05d5\u05d1\u05d3 \u05d0\u05d7\u05e8\u05d0\u05d9"
+    },
+    "net_hamishpat_number": {
+      "type": "string",
+      "description": "\u05de\u05e1\u05e4\u05e8 \u05ea\u05d9\u05e7 \u05d1\u05e0\u05d8 \u05d4\u05de\u05e9\u05e4\u05d8 (\u05de\u05d6\u05d4\u05d4 \u05d9\u05d9\u05d7\u05d5\u05d3\u05d9 \u05dc\u05d0\u05d9\u05e0\u05d8\u05d2\u05e8\u05e6\u05d9\u05d5\u05ea)"
+    },
+    "fee_status": {
+      "type": "string",
+      "enum": [
+        "\u05dc\u05d0 \u05e9\u05d5\u05dc\u05de\u05d4",
+        "\u05e9\u05d5\u05dc\u05de\u05d4",
+        "\u05d4\u05d5\u05d7\u05d6\u05e8\u05d4"
+      ],
+      "default": "\u05dc\u05d0 \u05e9\u05d5\u05dc\u05de\u05d4",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1 \u05d0\u05d2\u05e8\u05d4 (\u05e8\u05dc\u05d5\u05d5\u05e0\u05d8\u05d9 \u05e8\u05e7 \u05dc\u05e2\u05d5\u05d1\u05d3\u05d9\u05dd \u05d6\u05e8\u05d9\u05dd)"
+    },
+    "fee_paid_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05ea\u05e9\u05dc\u05d5\u05dd \u05d0\u05d2\u05e8\u05d4"
+    },
+    "fee_amount": {
+      "type": "number",
+      "default": 500,
+      "description": "\u05e1\u05db\u05d5\u05dd \u05d0\u05d2\u05e8\u05d4 \u05e9\u05e9\u05d5\u05dc\u05dd"
+    },
+    "fee_receipt": {
+      "type": "string",
+      "description": "URL \u05dc\u05e7\u05d1\u05dc\u05ea \u05ea\u05e9\u05dc\u05d5\u05dd \u05d0\u05d2\u05e8\u05d4"
+    },
+    "fee_refund_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d4\u05d7\u05d6\u05e8 \u05d0\u05d2\u05e8\u05d4"
+    },
+    "fee_refund_amount": {
+      "type": "number",
+      "description": "\u05e1\u05db\u05d5\u05dd \u05e9\u05d4\u05d5\u05d7\u05d6\u05e8"
+    },
+    "fee_refund_receipt": {
+      "type": "string",
+      "description": "URL \u05dc\u05d0\u05e1\u05de\u05db\u05ea\u05d0 \u05d4\u05d7\u05d6\u05e8"
+    },
+    "fee_notes": {
+      "type": "string",
+      "description": "\u05d4\u05e2\u05e8\u05d5\u05ea \u05d0\u05d2\u05e8\u05d4"
+    },
+    "hearings": {
+      "type": "array",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05db\u05d9 \u05d3\u05d9\u05d5\u05e0\u05d9\u05dd",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "time": {
+            "type": "string",
+            "description": "\u05e9\u05e2\u05ea \u05d4\u05d3\u05d9\u05d5\u05df (HH:MM)"
+          },
+          "description": {
+            "type": "string"
+          },
+          "proceeding_number": {
+            "type": "string",
+            "description": "\u05de\u05e1\u05e4\u05e8 \u05d4\u05dc\u05d9\u05da"
+          },
+          "location": {
+            "type": "string",
+            "description": "\u05d1\u05d9\u05ea \u05de\u05e9\u05e4\u05d8 / \u05de\u05e7\u05d5\u05dd \u05d4\u05d3\u05d9\u05d5\u05df"
+          }
+        }
+      }
+    },
+    "documents": {
+      "type": "array",
+      "description": "\u05de\u05e1\u05de\u05db\u05d9\u05dd \u05d5\u05ea\u05d9\u05e2\u05d5\u05d3 \u05d4\u05ea\u05d9\u05e7",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "\u05e9\u05dd \u05d4\u05e7\u05d5\u05d1\u05e5"
+          },
+          "url": {
+            "type": "string",
+            "description": "\u05db\u05ea\u05d5\u05d1\u05ea \u05d4\u05e7\u05d5\u05d1\u05e5"
+          },
+          "drive_id": {
+            "type": "string",
+            "description": "\u05de\u05d6\u05d4\u05d4 \u05e7\u05d5\u05d1\u05e5 \u05d1-Google Drive"
+          },
+          "drive_view_link": {
+            "type": "string",
+            "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05e6\u05e4\u05d9\u05d9\u05d4 \u05d1-Drive"
+          },
+          "upload_date": {
+            "type": "string",
+            "format": "date-time",
+            "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d4\u05e2\u05dc\u05d0\u05d4"
+          },
+          "uploaded_by": {
+            "type": "string",
+            "description": "\u05de\u05d9 \u05d4\u05e2\u05dc\u05d4"
+          },
+          "category": {
+            "type": "string",
+            "description": "\u05e7\u05d8\u05d2\u05d5\u05e8\u05d9\u05d9\u05ea \u05d4\u05de\u05e1\u05de\u05da"
+          }
+        }
+      }
+    },
+    "timeline": {
+      "type": "array",
+      "description": "\u05e8\u05e9\u05d9\u05de\u05ea \u05d0\u05d9\u05e8\u05d5\u05e2\u05d9\u05dd \u05d1\u05ea\u05d9\u05e7",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "event_type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "case_number",
+    "case_name",
+    "client_id",
+    "case_type"
+  ]
+}

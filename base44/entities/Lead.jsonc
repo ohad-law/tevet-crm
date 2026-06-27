@@ -1,0 +1,211 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05de\u05dc\u05d0"
+    },
+    "phone": {
+      "type": "string",
+      "description": "\u05d8\u05dc\u05e4\u05d5\u05df"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "\u05d0\u05d9\u05de\u05d9\u05d9\u05dc"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "Google Ads",
+        "Facebook",
+        "Instagram",
+        "LinkedIn",
+        "\u05d0\u05ea\u05e8",
+        "\u05d4\u05de\u05dc\u05e6\u05d4",
+        "\u05d0\u05d7\u05e8"
+      ],
+      "description": "\u05de\u05e7\u05d5\u05e8 \u05d4\u05dc\u05d9\u05d3"
+    },
+    "source_other": {
+      "type": "string",
+      "description": "\u05e4\u05d9\u05e8\u05d5\u05d8 \u05de\u05e7\u05d5\u05e8 \u05d0\u05d7\u05e8 (\u05db\u05e9\u05d1\u05d5\u05d7\u05e8\u05d9\u05dd '\u05d0\u05d7\u05e8')"
+    },
+    "campaign_name": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05e7\u05de\u05e4\u05d9\u05d9\u05df"
+    },
+    "landing_page": {
+      "type": "string",
+      "description": "\u05d3\u05e3 \u05e0\u05d7\u05d9\u05ea\u05d4"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "\u05d7\u05d3\u05e9",
+        "\u05d9\u05e6\u05e8 \u05e7\u05e9\u05e8",
+        "\u05e4\u05d2\u05d9\u05e9\u05d4 \u05e0\u05e7\u05d1\u05e2\u05d4",
+        "\u05e4\u05d5\u05dc\u05d5 \u05d0\u05e4 \u05e0\u05d3\u05e8\u05e9",
+        "\u05dc\u05d9\u05d3 \u05d7\u05dd \ud83d\udd25",
+        "\u05d4\u05e4\u05da \u05dc\u05dc\u05e7\u05d5\u05d7",
+        "\u05dc\u05d0 \u05e8\u05dc\u05d5\u05d5\u05e0\u05d8\u05d9"
+      ],
+      "default": "\u05d7\u05d3\u05e9",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1 \u05d4\u05dc\u05d9\u05d3"
+    },
+    "assigned_to": {
+      "type": "string",
+      "description": "\u05d4\u05d5\u05e7\u05e6\u05d4 \u05dc"
+    },
+    "lead_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "default": 50,
+      "description": "\u05e6\u05d9\u05d5\u05df \u05dc\u05d9\u05d3"
+    },
+    "first_contact_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d9\u05e6\u05d9\u05e8\u05ea \u05e7\u05e9\u05e8 \u05e8\u05d0\u05e9\u05d5\u05df"
+    },
+    "converted_to_client": {
+      "type": "boolean",
+      "default": false,
+      "description": "\u05d4\u05d0\u05dd \u05d4\u05e4\u05da \u05dc\u05dc\u05e7\u05d5\u05d7"
+    },
+    "conversion_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d4\u05de\u05e8\u05d4"
+    },
+    "converted_client_id": {
+      "type": "string",
+      "description": "\u05de\u05d6\u05d4\u05d4 \u05d4\u05dc\u05e7\u05d5\u05d7 \u05e9\u05e0\u05d5\u05e6\u05e8"
+    },
+    "closed_deal_value": {
+      "type": "number",
+      "description": "\u05db\u05de\u05d4 \u05d4\u05dc\u05e7\u05d5\u05d7 \u05e1\u05d2\u05e8/\u05e9\u05d9\u05dc\u05dd \u05d1\u05e4\u05d5\u05e2\u05dc (\u20aa)"
+    },
+    "notes": {
+      "type": "string",
+      "description": "\u05d4\u05e2\u05e8\u05d5\u05ea"
+    },
+    "utm_source": {
+      "type": "string",
+      "description": "UTM Source"
+    },
+    "utm_medium": {
+      "type": "string",
+      "description": "UTM Medium"
+    },
+    "utm_campaign": {
+      "type": "string",
+      "description": "UTM Campaign"
+    },
+    "is_viewed": {
+      "type": "boolean",
+      "default": false,
+      "description": "\u05d4\u05d0\u05dd \u05d4\u05dc\u05d9\u05d3 \u05e0\u05e6\u05e4\u05d4"
+    },
+    "call_attempts": {
+      "type": "number",
+      "default": 0,
+      "description": "\u05de\u05e1\u05e4\u05e8 \u05e0\u05d9\u05e1\u05d9\u05d5\u05e0\u05d5\u05ea \u05d7\u05d9\u05d5\u05d2"
+    },
+    "call_status": {
+      "type": "string",
+      "enum": [
+        "\u05dc\u05d0 \u05d1\u05d5\u05e6\u05e2\u05d4",
+        "\u05d1\u05d5\u05e6\u05e2\u05d4",
+        "\u05dc\u05d0 \u05e2\u05e0\u05d4",
+        "\u05d4\u05d5\u05d3\u05e2\u05d4 \u05e0\u05e9\u05d0\u05e8\u05d4"
+      ],
+      "default": "\u05dc\u05d0 \u05d1\u05d5\u05e6\u05e2\u05d4",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1 \u05e9\u05d9\u05d7\u05d4"
+    },
+    "call_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d5\u05e9\u05e2\u05ea \u05e9\u05d9\u05d7\u05d4"
+    },
+    "call_duration": {
+      "type": "number",
+      "description": "\u05de\u05e9\u05da \u05e9\u05d9\u05d7\u05d4 \u05d1\u05d3\u05e7\u05d5\u05ea"
+    },
+    "call_transcript": {
+      "type": "string",
+      "description": "\u05ea\u05de\u05dc\u05d5\u05dc \u05e9\u05d9\u05d7\u05d4"
+    },
+    "call_analysis": {
+      "type": "string",
+      "description": "\u05e0\u05d9\u05ea\u05d5\u05d7 \u05e9\u05d9\u05d7\u05d4 AI"
+    },
+    "call_score": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 10,
+      "description": "\u05e6\u05d9\u05d5\u05df \u05e9\u05d9\u05d7\u05d4 (1-10)"
+    },
+    "call_recommendation": {
+      "type": "string",
+      "enum": [
+        "\u05dc\u05e1\u05d2\u05d5\u05e8",
+        "\u05dc\u05d4\u05de\u05e9\u05d9\u05da",
+        "\u05dc\u05e9\u05dc\u05d5\u05d7 \u05d7\u05d5\u05de\u05e8",
+        "\u05dc\u05d0 \u05e8\u05dc\u05d5\u05d5\u05e0\u05d8\u05d9"
+      ],
+      "description": "\u05d4\u05de\u05dc\u05e6\u05d4 \u05dc\u05e4\u05e2\u05d5\u05dc\u05d4"
+    },
+    "call_close_reason": {
+      "type": "string",
+      "enum": [
+        "\u05de\u05d7\u05d9\u05e8",
+        "\u05dc\u05d0 \u05e2\u05e0\u05d4",
+        "\u05d3\u05d7\u05d9\u05d9\u05d4",
+        "\u05d4\u05dc\u05da \u05dc\u05de\u05ea\u05d7\u05e8\u05d4",
+        "\u05dc\u05d0 \u05e8\u05dc\u05d5\u05d5\u05e0\u05d8\u05d9",
+        "\u05db\u05d1\u05e8 \u05e1\u05d5\u05d3\u05e8",
+        "\u05d0\u05d7\u05e8"
+      ],
+      "description": "\u05e1\u05d9\u05d1\u05ea \u05e1\u05d2\u05d9\u05e8\u05d4"
+    },
+    "call_main_objection": {
+      "type": "string",
+      "description": "\u05d4\u05ea\u05e0\u05d2\u05d3\u05d5\u05ea \u05e2\u05d9\u05e7\u05e8\u05d9\u05ea \u05d1\u05e9\u05d9\u05d7\u05d4"
+    },
+    "call_next_action": {
+      "type": "string",
+      "description": "\u05e4\u05e2\u05d5\u05dc\u05d4 \u05d4\u05d1\u05d0\u05d4 \u05de\u05d5\u05de\u05dc\u05e6\u05ea"
+    }
+  },
+  "required": [
+    "full_name",
+    "phone",
+    "source",
+    "status"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

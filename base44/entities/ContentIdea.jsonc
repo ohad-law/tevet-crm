@@ -1,0 +1,104 @@
+{
+  "name": "ContentIdea",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d4\u05e8\u05e2\u05d9\u05d5\u05df"
+    },
+    "description": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05de\u05e4\u05d5\u05e8\u05d8"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "\u05d8\u05d9\u05e4",
+        "\u05e1\u05d9\u05e4\u05d5\u05e8 \u05ea\u05d9\u05e7",
+        "\u05e9\u05d0\u05dc\u05d4 \u05d5\u05ea\u05e9\u05d5\u05d1\u05d4",
+        "\u05de\u05d9\u05ea\u05d5\u05e1 vs \u05de\u05e6\u05d9\u05d0\u05d5\u05ea",
+        "\u05e8\u05e9\u05d9\u05de\u05d4",
+        "\u05d7\u05d9\u05e0\u05d5\u05db\u05d9",
+        "\u05d0\u05d9\u05e9\u05d9"
+      ],
+      "description": "\u05e1\u05d5\u05d2 \u05ea\u05d5\u05db\u05df"
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Instagram",
+          "TikTok",
+          "LinkedIn",
+          "Facebook",
+          "YouTube"
+        ]
+      },
+      "description": "\u05e4\u05dc\u05d8\u05e4\u05d5\u05e8\u05de\u05d5\u05ea \u05de\u05ea\u05d0\u05d9\u05de\u05d5\u05ea"
+    },
+    "potential_score": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "\u05e4\u05d5\u05d8\u05e0\u05e6\u05d9\u05d0\u05dc \u05d5\u05d9\u05e8\u05d0\u05dc\u05d9 (1-5 \u05db\u05d5\u05db\u05d1\u05d9\u05dd)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "\u05e8\u05e2\u05d9\u05d5\u05df",
+        "\u05d0\u05d5\u05e9\u05e8",
+        "\u05d1\u05d1\u05d9\u05e6\u05d5\u05e2",
+        "\u05d4\u05d5\u05e9\u05dc\u05dd",
+        "\u05d3\u05d7\u05d5\u05d9"
+      ],
+      "default": "\u05e8\u05e2\u05d9\u05d5\u05df",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "AI",
+        "\u05d9\u05d3\u05e0\u05d9",
+        "\u05de\u05ea\u05d7\u05e8\u05d4",
+        "\u05dc\u05e7\u05d5\u05d7",
+        "\u05d8\u05e8\u05e0\u05d3"
+      ],
+      "description": "\u05de\u05e7\u05d5\u05e8 \u05d4\u05e8\u05e2\u05d9\u05d5\u05df"
+    },
+    "created_post_id": {
+      "type": "string",
+      "description": "\u05de\u05d6\u05d4\u05d4 \u05d4\u05e4\u05d5\u05e1\u05d8 \u05e9\u05e0\u05d5\u05e6\u05e8"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "\u05e0\u05de\u05d5\u05db\u05d4",
+        "\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9\u05ea",
+        "\u05d2\u05d1\u05d5\u05d4\u05d4",
+        "\u05d3\u05d7\u05d5\u05e4\u05d4"
+      ],
+      "default": "\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9\u05ea",
+      "description": "\u05e2\u05d3\u05d9\u05e4\u05d5\u05ea"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "\u05ea\u05d2\u05d9\u05d5\u05ea"
+    }
+  },
+  "required": [
+    "title",
+    "category"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

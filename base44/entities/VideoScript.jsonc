@@ -1,0 +1,132 @@
+{
+  "name": "VideoScript",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d4\u05e1\u05e8\u05d8\u05d5\u05df"
+    },
+    "initial_idea": {
+      "type": "string",
+      "description": "\u05d4\u05e8\u05e2\u05d9\u05d5\u05df \u05d4\u05e8\u05d0\u05e9\u05d5\u05e0\u05d9 \u05e9\u05d4\u05d5\u05d6\u05df"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "TikTok",
+        "Instagram Reel",
+        "Instagram Story",
+        "YouTube Short",
+        "LinkedIn"
+      ],
+      "description": "\u05e4\u05dc\u05d8\u05e4\u05d5\u05e8\u05de\u05d4"
+    },
+    "target_audience": {
+      "type": "string",
+      "description": "\u05e7\u05d4\u05dc \u05d9\u05e2\u05d3"
+    },
+    "content_category": {
+      "type": "string",
+      "enum": [
+        "\u05d7\u05d9\u05e0\u05d5\u05db\u05d9",
+        "\u05e1\u05d9\u05e4\u05d5\u05e8 \u05d0\u05d9\u05e9\u05d9",
+        "\u05d8\u05d9\u05e4 \u05de\u05e7\u05e6\u05d5\u05e2\u05d9",
+        "\u05d4\u05e9\u05d5\u05d5\u05d0\u05d4",
+        "\u05e9\u05d1\u05d9\u05e8\u05ea \u05de\u05d9\u05ea\u05d5\u05e1",
+        "\u05d9\u05d5\u05dd \u05d1\u05d7\u05d9\u05d9\u05dd",
+        "\u05d0\u05d5\u05d8\u05d5\u05e8\u05d9\u05d8\u05d4"
+      ],
+      "description": "\u05e1\u05d5\u05d2 \u05d4\u05ea\u05d5\u05db\u05df"
+    },
+    "hook": {
+      "type": "string",
+      "description": "\u05d4\u05d4\u05d5\u05e7 (3 \u05e9\u05e0\u05d9\u05d5\u05ea \u05e8\u05d0\u05e9\u05d5\u05e0\u05d5\u05ea)"
+    },
+    "problem": {
+      "type": "string",
+      "description": "\u05d4\u05d1\u05e2\u05d9\u05d4 \u05e9\u05d4\u05e7\u05d4\u05dc \u05de\u05ea\u05de\u05d5\u05d3\u05d3 \u05d0\u05d9\u05ea\u05d4"
+    },
+    "urgency": {
+      "type": "string",
+      "description": "\u05dc\u05de\u05d4 \u05dc\u05e4\u05e2\u05d5\u05dc \u05e2\u05db\u05e9\u05d9\u05d5"
+    },
+    "authority": {
+      "type": "string",
+      "description": "\u05dc\u05de\u05d4 \u05dc\u05d4\u05d0\u05de\u05d9\u05df \u05dc\u05da"
+    },
+    "solution": {
+      "type": "string",
+      "description": "\u05d4\u05e4\u05ea\u05e8\u05d5\u05df/\u05d4\u05ea\u05d5\u05d1\u05e0\u05d4 \u05d4\u05de\u05e8\u05db\u05d6\u05d9\u05ea"
+    },
+    "application": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05da \u05dc\u05d9\u05d9\u05e9\u05dd \u05d1\u05e4\u05d5\u05e2\u05dc"
+    },
+    "cta": {
+      "type": "string",
+      "description": "\u05e7\u05e8\u05d9\u05d0\u05d4 \u05dc\u05e4\u05e2\u05d5\u05dc\u05d4"
+    },
+    "full_script": {
+      "type": "string",
+      "description": "\u05d4\u05e1\u05e7\u05e8\u05d9\u05e4\u05d8 \u05d4\u05de\u05dc\u05d0"
+    },
+    "visual_notes": {
+      "type": "string",
+      "description": "\u05d4\u05e2\u05e8\u05d5\u05ea \u05d5\u05d9\u05d6\u05d5\u05d0\u05dc\u05d9\u05d5\u05ea/\u05d4\u05e0\u05d7\u05d9\u05d5\u05ea \u05e6\u05d9\u05dc\u05d5\u05dd"
+    },
+    "estimated_duration": {
+      "type": "number",
+      "description": "\u05d0\u05d5\u05e8\u05da \u05de\u05e9\u05d5\u05e2\u05e8 \u05d1\u05e9\u05e0\u05d9\u05d5\u05ea"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "\u05e8\u05e2\u05d9\u05d5\u05df",
+        "\u05e1\u05e7\u05e8\u05d9\u05e4\u05d8 \u05de\u05d5\u05db\u05df",
+        "\u05d1\u05e6\u05d9\u05dc\u05d5\u05dd",
+        "\u05d1\u05e2\u05e8\u05d9\u05db\u05d4",
+        "\u05e4\u05d5\u05e8\u05e1\u05dd"
+      ],
+      "default": "\u05e8\u05e2\u05d9\u05d5\u05df",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1"
+    },
+    "published_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05e1\u05e8\u05d8\u05d5\u05df \u05e9\u05e4\u05d5\u05e8\u05e1\u05dd"
+    },
+    "performance_metrics": {
+      "type": "object",
+      "properties": {
+        "views": {
+          "type": "number"
+        },
+        "likes": {
+          "type": "number"
+        },
+        "comments": {
+          "type": "number"
+        },
+        "shares": {
+          "type": "number"
+        },
+        "engagement_rate": {
+          "type": "number"
+        }
+      }
+    },
+    "ai_generated": {
+      "type": "boolean",
+      "default": true,
+      "description": "\u05d4\u05d0\u05dd \u05e0\u05d5\u05e6\u05e8 \u05e2\u05dc \u05d9\u05d3\u05d9 AI"
+    },
+    "hook_template_used": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05d6\u05d4 Hook Template \u05e9\u05d9\u05de\u05e9"
+    }
+  },
+  "required": [
+    "title",
+    "initial_idea",
+    "platform"
+  ]
+}

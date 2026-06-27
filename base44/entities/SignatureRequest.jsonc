@@ -1,0 +1,79 @@
+{
+  "name": "SignatureRequest",
+  "type": "object",
+  "properties": {
+    "document_name": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05d4\u05de\u05e1\u05de\u05da \u05dc\u05d7\u05ea\u05d9\u05de\u05d4"
+    },
+    "case_id": {
+      "type": "string",
+      "description": "\u05de\u05d6\u05d4\u05d4 \u05d4\u05ea\u05d9\u05e7"
+    },
+    "client_id": {
+      "type": "string",
+      "description": "\u05de\u05d6\u05d4\u05d4 \u05d4\u05dc\u05e7\u05d5\u05d7"
+    },
+    "client_name": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05d4\u05dc\u05e7\u05d5\u05d7"
+    },
+    "client_phone": {
+      "type": "string",
+      "description": "\u05d8\u05dc\u05e4\u05d5\u05df \u05d4\u05dc\u05e7\u05d5\u05d7 \u05dc\u05d5\u05d5\u05d8\u05e1\u05d0\u05e4"
+    },
+    "client_email": {
+      "type": "string",
+      "format": "email",
+      "description": "\u05de\u05d9\u05d9\u05dc \u05d4\u05dc\u05e7\u05d5\u05d7"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "sent",
+        "viewed",
+        "signed",
+        "expired"
+      ],
+      "default": "draft",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1"
+    },
+    "access_token": {
+      "type": "string",
+      "description": "\u05d8\u05d5\u05e7\u05df \u05d9\u05d9\u05d7\u05d5\u05d3\u05d9 \u05dc\u05d2\u05d9\u05e9\u05d4 \u05e6\u05d9\u05d1\u05d5\u05e8\u05d9\u05ea"
+    },
+    "original_file_url": {
+      "type": "string",
+      "description": "\u05e7\u05d5\u05d1\u05e5 \u05d4\u05de\u05e7\u05d5\u05e8"
+    },
+    "signed_file_url": {
+      "type": "string",
+      "description": "\u05e7\u05d5\u05d1\u05e5 \u05d7\u05ea\u05d5\u05dd"
+    },
+    "message": {
+      "type": "string",
+      "description": "\u05d4\u05d5\u05d3\u05e2\u05d4 \u05de\u05e7\u05d3\u05d9\u05de\u05d4 \u05dc\u05dc\u05e7\u05d5\u05d7"
+    },
+    "sent_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05e9\u05dc\u05d9\u05d7\u05d4"
+    },
+    "viewed_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05e6\u05e4\u05d9\u05d9\u05d4"
+    },
+    "signed_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d7\u05ea\u05d9\u05de\u05d4"
+    }
+  },
+  "required": [
+    "document_name",
+    "client_name",
+    "original_file_url"
+  ]
+}

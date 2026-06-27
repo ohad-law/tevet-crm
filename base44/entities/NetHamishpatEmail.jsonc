@@ -1,0 +1,77 @@
+{
+  "name": "NetHamishpatEmail",
+  "type": "object",
+  "properties": {
+    "message_id": {
+      "type": "string",
+      "description": "Unique ID of the email from Gmail"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Email subject"
+    },
+    "received_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date received"
+    },
+    "sender": {
+      "type": "string",
+      "description": "Sender email address"
+    },
+    "body_preview": {
+      "type": "string",
+      "description": "Short preview of the content"
+    },
+    "full_content": {
+      "type": "string",
+      "description": "Full HTML/Text content"
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "content_type": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "List of attachments"
+    },
+    "case_number_extracted": {
+      "type": "string",
+      "description": "Case number extracted from subject/body"
+    },
+    "linked_case_id": {
+      "type": "string",
+      "description": "ID of the matched Case entity"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "processed",
+        "error",
+        "ignored"
+      ],
+      "default": "new"
+    },
+    "processing_notes": {
+      "type": "string",
+      "description": "Error logs or processing details"
+    }
+  },
+  "required": [
+    "message_id",
+    "subject",
+    "received_date"
+  ],
+  "rls": {}
+}

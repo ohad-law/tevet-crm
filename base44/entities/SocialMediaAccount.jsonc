@@ -1,0 +1,77 @@
+{
+  "name": "SocialMediaAccount",
+  "type": "object",
+  "properties": {
+    "platform": {
+      "type": "string",
+      "enum": [
+        "Instagram",
+        "TikTok",
+        "Facebook",
+        "YouTube"
+      ],
+      "description": "\u05e4\u05dc\u05d8\u05e4\u05d5\u05e8\u05de\u05d4"
+    },
+    "username": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05de\u05e9\u05ea\u05de\u05e9"
+    },
+    "profile_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05e4\u05e8\u05d5\u05e4\u05d9\u05dc"
+    },
+    "followers_count": {
+      "type": "number",
+      "default": 0,
+      "description": "\u05de\u05e1\u05e4\u05e8 \u05e2\u05d5\u05e7\u05d1\u05d9\u05dd"
+    },
+    "following_count": {
+      "type": "number",
+      "default": 0,
+      "description": "\u05e2\u05d5\u05e7\u05d1 \u05d0\u05d7\u05e8\u05d9"
+    },
+    "posts_count": {
+      "type": "number",
+      "default": 0,
+      "description": "\u05de\u05e1\u05e4\u05e8 \u05e4\u05d5\u05e1\u05d8\u05d9\u05dd"
+    },
+    "avg_engagement_rate": {
+      "type": "number",
+      "description": "\u05d0\u05d7\u05d5\u05d6 \u05de\u05e2\u05d5\u05e8\u05d1\u05d5\u05ea \u05de\u05de\u05d5\u05e6\u05e2"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "\u05e4\u05e2\u05d9\u05dc"
+    },
+    "last_post_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05e4\u05d5\u05e1\u05d8 \u05d0\u05d7\u05e8\u05d5\u05df"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Bio"
+    },
+    "profile_image_url": {
+      "type": "string",
+      "description": "\u05ea\u05de\u05d5\u05e0\u05ea \u05e4\u05e8\u05d5\u05e4\u05d9\u05dc"
+    },
+    "monthly_goal_followers": {
+      "type": "number",
+      "description": "\u05d9\u05e2\u05d3 \u05e2\u05d5\u05e7\u05d1\u05d9\u05dd \u05d7\u05d5\u05d3\u05e9\u05d9"
+    },
+    "monthly_goal_posts": {
+      "type": "number",
+      "description": "\u05d9\u05e2\u05d3 \u05e4\u05d5\u05e1\u05d8\u05d9\u05dd \u05d7\u05d5\u05d3\u05e9\u05d9"
+    },
+    "monthly_goal_leads": {
+      "type": "number",
+      "description": "\u05d9\u05e2\u05d3 \u05dc\u05d9\u05d3\u05d9\u05dd \u05d7\u05d5\u05d3\u05e9\u05d9"
+    }
+  },
+  "required": [
+    "platform",
+    "username"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "name": "LeadShatafYaniv",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05de\u05dc\u05d0"
+    },
+    "phone": {
+      "type": "string",
+      "description": "\u05d8\u05dc\u05e4\u05d5\u05df"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "\u05d0\u05d9\u05de\u05d9\u05d9\u05dc"
+    },
+    "work_duration": {
+      "type": "string",
+      "description": "\u05e9\u05e0\u05d5\u05ea \u05d5\u05ea\u05e7"
+    },
+    "salary_cash": {
+      "type": "string",
+      "description": "\u05e9\u05db\u05e8 \u05d1\u05de\u05d6\u05d5\u05de\u05df?"
+    },
+    "overtime": {
+      "type": "string",
+      "description": "\u05e9\u05e2\u05d5\u05ea \u05e0\u05d5\u05e1\u05e4\u05d5\u05ea?"
+    },
+    "termination_reason": {
+      "type": "string",
+      "description": "\u05e1\u05d9\u05d1\u05ea \u05e1\u05d9\u05d5\u05dd \u05e2\u05d1\u05d5\u05d3\u05d4"
+    },
+    "drive_link": {
+      "type": "string",
+      "description": "\u05dc\u05d9\u05e0\u05e7 \u05dc\u05d3\u05e8\u05d9\u05d9\u05d1"
+    },
+    "facebook_lead_id": {
+      "type": "string",
+      "description": "\u05de\u05d6\u05d4\u05d4 \u05dc\u05d9\u05d3 \u05e4\u05d9\u05d9\u05e1\u05d1\u05d5\u05e7"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "\u05d7\u05d3\u05e9",
+        "\u05e0\u05d5\u05e6\u05e8 \u05e7\u05e9\u05e8",
+        "\u05de\u05ea\u05d0\u05d9\u05dd",
+        "\u05dc\u05d0 \u05de\u05ea\u05d0\u05d9\u05dd",
+        "\u05d4\u05d5\u05de\u05e8 \u05dc\u05dc\u05e7\u05d5\u05d7"
+      ],
+      "default": "\u05d7\u05d3\u05e9",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1"
+    },
+    "notes": {
+      "type": "string",
+      "description": "\u05d4\u05e2\u05e8\u05d5\u05ea"
+    },
+    "is_viewed": {
+      "type": "boolean",
+      "default": false,
+      "description": "\u05d4\u05d0\u05dd \u05d4\u05dc\u05d9\u05d3 \u05e0\u05e6\u05e4\u05d4"
+    }
+  },
+  "required": [
+    "full_name",
+    "phone"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "name": "SocialMediaPost",
+  "type": "object",
+  "properties": {
+    "platform": {
+      "type": "string",
+      "enum": [
+        "Instagram",
+        "TikTok",
+        "Facebook",
+        "YouTube"
+      ],
+      "description": "\u05e4\u05dc\u05d8\u05e4\u05d5\u05e8\u05de\u05d4"
+    },
+    "content_type": {
+      "type": "string",
+      "enum": [
+        "\u05e8\u05d2\u05d9\u05dc",
+        "Reel/Short",
+        "Story",
+        "Carousel",
+        "Live"
+      ],
+      "description": "\u05e1\u05d5\u05d2 \u05ea\u05d5\u05db\u05df"
+    },
+    "title": {
+      "type": "string",
+      "description": "\u05db\u05d5\u05ea\u05e8\u05ea \u05d4\u05e4\u05d5\u05e1\u05d8"
+    },
+    "caption": {
+      "type": "string",
+      "description": "\u05d8\u05e7\u05e1\u05d8 \u05d4\u05e4\u05d5\u05e1\u05d8"
+    },
+    "hook": {
+      "type": "string",
+      "description": "\u05d4\u05de\u05e9\u05e4\u05d8 \u05d4\u05e4\u05d5\u05ea\u05d7"
+    },
+    "hashtags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "\u05d4\u05d0\u05e9\u05d8\u05d2\u05d9\u05dd"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "\u05d8\u05d9\u05e4",
+        "\u05e1\u05d9\u05e4\u05d5\u05e8 \u05ea\u05d9\u05e7",
+        "\u05e9\u05d0\u05dc\u05d4 \u05d5\u05ea\u05e9\u05d5\u05d1\u05d4",
+        "\u05de\u05d9\u05ea\u05d5\u05e1 vs \u05de\u05e6\u05d9\u05d0\u05d5\u05ea",
+        "\u05e8\u05e9\u05d9\u05de\u05d4",
+        "\u05d7\u05d9\u05e0\u05d5\u05db\u05d9",
+        "\u05d0\u05d9\u05e9\u05d9"
+      ],
+      "description": "\u05e7\u05d8\u05d2\u05d5\u05e8\u05d9\u05d9\u05ea \u05ea\u05d5\u05db\u05df"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "\u05e8\u05e2\u05d9\u05d5\u05df",
+        "\u05d1\u05d4\u05db\u05e0\u05d4",
+        "\u05de\u05d5\u05db\u05df",
+        "\u05de\u05ea\u05d5\u05d6\u05de\u05df",
+        "\u05e4\u05d5\u05e8\u05e1\u05dd"
+      ],
+      "default": "\u05e8\u05e2\u05d9\u05d5\u05df",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1"
+    },
+    "scheduled_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "\u05de\u05ea\u05d5\u05d6\u05de\u05df \u05dc"
+    },
+    "published_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05e4\u05e8\u05e1\u05d5\u05dd \u05d1\u05e4\u05d5\u05e2\u05dc"
+    },
+    "media_urls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8\u05d9\u05dd \u05dc\u05ea\u05de\u05d5\u05e0\u05d5\u05ea/\u05e1\u05e8\u05d8\u05d5\u05e0\u05d9\u05dd"
+    },
+    "post_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05e4\u05d5\u05e1\u05d8 \u05d4\u05de\u05e4\u05d5\u05e8\u05e1\u05dd"
+    },
+    "views": {
+      "type": "number",
+      "default": 0,
+      "description": "\u05e6\u05e4\u05d9\u05d5\u05ea"
+    },
+    "likes": {
+      "type": "number",
+      "default": 0,
+      "description": "\u05dc\u05d9\u05d9\u05e7\u05d9\u05dd"
+    },
+    "comments": {
+      "type": "number",
+      "default": 0,
+      "description": "\u05ea\u05d2\u05d5\u05d1\u05d5\u05ea"
+    },
+    "shares": {
+      "type": "number",
+      "default": 0,
+      "description": "\u05e9\u05d9\u05ea\u05d5\u05e4\u05d9\u05dd"
+    },
+    "saves": {
+      "type": "number",
+      "default": 0,
+      "description": "\u05e9\u05de\u05d9\u05e8\u05d5\u05ea"
+    },
+    "leads_generated": {
+      "type": "number",
+      "default": 0,
+      "description": "\u05dc\u05d9\u05d3\u05d9\u05dd \u05e9\u05e0\u05d5\u05e6\u05e8\u05d5"
+    },
+    "engagement_rate": {
+      "type": "number",
+      "description": "\u05d0\u05d7\u05d5\u05d6 \u05de\u05e2\u05d5\u05e8\u05d1\u05d5\u05ea"
+    },
+    "ai_generated": {
+      "type": "boolean",
+      "default": false,
+      "description": "\u05e0\u05d5\u05e6\u05e8 \u05e2\"\u05d9 AI"
+    },
+    "template_used": {
+      "type": "string",
+      "description": "\u05ea\u05d1\u05e0\u05d9\u05ea \u05e9\u05e9\u05d9\u05de\u05e9\u05d4"
+    },
+    "notes": {
+      "type": "string",
+      "description": "\u05d4\u05e2\u05e8\u05d5\u05ea"
+    }
+  },
+  "required": [
+    "platform",
+    "title",
+    "status"
+  ]
+}

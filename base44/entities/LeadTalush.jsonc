@@ -1,0 +1,183 @@
+{
+  "name": "LeadTalush",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05de\u05dc\u05d0"
+    },
+    "phone": {
+      "type": "string",
+      "description": "\u05d8\u05dc\u05e4\u05d5\u05df"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "\u05d0\u05d9\u05de\u05d9\u05d9\u05dc"
+    },
+    "work_duration": {
+      "type": "string",
+      "description": "\u05db\u05de\u05d4 \u05d6\u05de\u05df \u05e2\u05d1\u05d3\u05ea"
+    },
+    "workplace": {
+      "type": "string",
+      "description": "\u05d0\u05d9\u05e4\u05d4 \u05e2\u05d1\u05d3\u05ea - \u05e9\u05dd \u05d4\u05de\u05e2\u05e1\u05d9\u05e7"
+    },
+    "job_role": {
+      "type": "string",
+      "description": "\u05de\u05d4 \u05d4\u05ea\u05e4\u05e7\u05d9\u05d3 \u05d1\u05e4\u05d5\u05e2\u05dc"
+    },
+    "employment_status": {
+      "type": "string",
+      "enum": [
+        "\u05e4\u05d5\u05d8\u05e8\u05ea\u05d9",
+        "\u05d4\u05ea\u05e4\u05d8\u05e8\u05ea\u05d9",
+        "\u05e9\u05d5\u05e7\u05dc \u05dc\u05d4\u05ea\u05e4\u05d8\u05e8",
+        "\u05e2\u05d3\u05d9\u05d9\u05df \u05e2\u05d5\u05d1\u05d3"
+      ],
+      "description": "\u05de\u05e6\u05d1 \u05ea\u05e2\u05e1\u05d5\u05e7\u05ea\u05d9"
+    },
+    "days_per_week": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 7,
+      "description": "\u05d9\u05de\u05d9\u05dd \u05d1\u05e9\u05d1\u05d5\u05e2"
+    },
+    "hours_per_day": {
+      "type": "number",
+      "description": "\u05e9\u05e2\u05d5\u05ea \u05d1\u05d9\u05d5\u05dd"
+    },
+    "salary_type": {
+      "type": "string",
+      "enum": [
+        "\u05d7\u05d5\u05d3\u05e9\u05d9",
+        "\u05e9\u05e2\u05ea\u05d9"
+      ],
+      "description": "\u05e1\u05d5\u05d2 \u05e9\u05db\u05e8"
+    },
+    "main_concern": {
+      "type": "string",
+      "description": "\u05de\u05d4 \u05d4\u05d1\u05e2\u05d9\u05d4 \u05d4\u05e2\u05d9\u05e7\u05e8\u05d9\u05ea \u05e9\u05dc\u05da"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "\u05d7\u05d3\u05e9",
+        "\u05e0\u05d5\u05e6\u05e8 \u05e7\u05e9\u05e8",
+        "\u05de\u05ea\u05d0\u05d9\u05dd",
+        "\u05dc\u05d0 \u05de\u05ea\u05d0\u05d9\u05dd",
+        "\u05d4\u05d5\u05de\u05e8 \u05dc\u05dc\u05e7\u05d5\u05d7"
+      ],
+      "default": "\u05d7\u05d3\u05e9",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1"
+    },
+    "notes": {
+      "type": "string",
+      "description": "\u05d4\u05e2\u05e8\u05d5\u05ea \u05e4\u05e0\u05d9\u05de\u05d9\u05d5\u05ea"
+    },
+    "source": {
+      "type": "string",
+      "default": "tiktok",
+      "description": "\u05de\u05e7\u05d5\u05e8 \u05d4\u05dc\u05d9\u05d3"
+    },
+    "uploaded_files": {
+      "type": "array",
+      "description": "\u05ea\u05dc\u05d5\u05e9\u05d9 \u05e9\u05db\u05e8 \u05e9\u05d4\u05d5\u05e2\u05dc\u05d5",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "\u05e9\u05dd \u05d4\u05e7\u05d5\u05d1\u05e5"
+          },
+          "url": {
+            "type": "string",
+            "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05e7\u05d5\u05d1\u05e5"
+          }
+        }
+      }
+    },
+    "is_viewed": {
+      "type": "boolean",
+      "default": false,
+      "description": "\u05d4\u05d0\u05dd \u05d4\u05dc\u05d9\u05d3 \u05e0\u05e6\u05e4\u05d4"
+    },
+    "termination_reason_client_stated": {
+      "type": "string",
+      "enum": [
+        "\u05e4\u05d9\u05d8\u05d5\u05e8\u05d9\u05dd",
+        "\u05d4\u05ea\u05e4\u05d8\u05e8\u05d5\u05ea",
+        "\u05d4\u05ea\u05e4\u05d8\u05e8\u05d5\u05ea \u05d1\u05d3\u05d9\u05df \u05de\u05e4\u05d5\u05d8\u05e8",
+        "\u05e1\u05d9\u05d5\u05dd \u05d7\u05d5\u05d6\u05d4",
+        "\u05d0\u05d7\u05e8"
+      ],
+      "description": "\u05e1\u05d9\u05d1\u05ea \u05e1\u05d9\u05d5\u05dd \u05d9\u05d7\u05e1\u05d9 \u05e2\u05d1\u05d5\u05d3\u05d4 \u05db\u05e4\u05d9 \u05e9\u05e6\u05d5\u05d9\u05e0\u05d4 \u05e2\u05dc \u05d9\u05d3\u05d9 \u05d4\u05dc\u05e7\u05d5\u05d7"
+    },
+    "termination_date_client_stated": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05e1\u05d9\u05d5\u05dd \u05d4\u05e2\u05d1\u05d5\u05d3\u05d4 \u05db\u05e4\u05d9 \u05e9\u05e6\u05d5\u05d9\u05df \u05e2\u05dc \u05d9\u05d3\u05d9 \u05d4\u05dc\u05e7\u05d5\u05d7"
+    },
+    "start_date_client_stated": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05ea\u05d7\u05d9\u05dc\u05ea \u05d4\u05e2\u05d1\u05d5\u05d3\u05d4 \u05db\u05e4\u05d9 \u05e9\u05e6\u05d5\u05d9\u05df \u05e2\u05dc \u05d9\u05d3\u05d9 \u05d4\u05dc\u05e7\u05d5\u05d7"
+    },
+    "received_dismissal_letter": {
+      "type": "boolean",
+      "description": "\u05d4\u05d0\u05dd \u05e7\u05d9\u05d1\u05dc\u05ea \u05de\u05db\u05ea\u05d1 \u05e4\u05d9\u05d8\u05d5\u05e8\u05d9\u05dd \u05d0\u05d5 \u05d4\u05ea\u05e4\u05d8\u05e8\u05d5\u05ea?"
+    },
+    "signed_waiver_of_rights": {
+      "type": "boolean",
+      "description": "\u05d4\u05d0\u05dd \u05d7\u05ea\u05de\u05ea \u05e2\u05dc \u05de\u05e1\u05de\u05da \u05d5\u05d9\u05ea\u05d5\u05e8 \u05d6\u05db\u05d5\u05d9\u05d5\u05ea \u05db\u05dc\u05e9\u05d4\u05d5?"
+    },
+    "has_financial_difficulties": {
+      "type": "boolean",
+      "description": "\u05d4\u05d0\u05dd \u05e7\u05d9\u05d9\u05de\u05d9\u05dd \u05e7\u05e9\u05d9\u05d9\u05dd \u05db\u05dc\u05db\u05dc\u05d9\u05d9\u05dd \u05de\u05e9\u05de\u05e2\u05d5\u05ea\u05d9\u05d9\u05dd?"
+    },
+    "desired_legal_remedies": {
+      "type": "array",
+      "description": "\u05e1\u05e2\u05d3\u05d9\u05dd \u05de\u05e9\u05e4\u05d8\u05d9\u05d9\u05dd \u05de\u05d1\u05d5\u05e7\u05e9\u05d9\u05dd",
+      "items": {
+        "type": "string",
+        "enum": [
+          "\u05e4\u05d9\u05e6\u05d5\u05d9\u05d9 \u05e4\u05d9\u05d8\u05d5\u05e8\u05d9\u05dd",
+          "\u05d3\u05de\u05d9 \u05d4\u05d5\u05d3\u05e2\u05d4 \u05de\u05d5\u05e7\u05d3\u05de\u05ea",
+          "\u05d4\u05e4\u05e8\u05e9\u05d9 \u05e9\u05db\u05e8",
+          "\u05d6\u05db\u05d5\u05d9\u05d5\u05ea \u05e1\u05d5\u05e6\u05d9\u05d0\u05dc\u05d9\u05d5\u05ea",
+          "\u05e4\u05d9\u05e6\u05d5\u05d9 \u05d1\u05d2\u05d9\u05df \u05d0\u05e4\u05dc\u05d9\u05d4/\u05d4\u05d8\u05e8\u05d3\u05d4",
+          "\u05d0\u05d7\u05e8"
+        ]
+      }
+    },
+    "bot_interaction_summary": {
+      "type": "string",
+      "description": "\u05e1\u05d9\u05db\u05d5\u05dd \u05ea\u05de\u05e6\u05d9\u05ea\u05d9 \u05e9\u05dc \u05d4\u05d0\u05d9\u05e0\u05d8\u05e8\u05d0\u05e7\u05e6\u05d9\u05d4 \u05e2\u05dd \u05d4\u05d1\u05d5\u05d8"
+    },
+    "bot_status": {
+      "type": "string",
+      "enum": [
+        "\u05de\u05de\u05ea\u05d9\u05df \u05dc\u05ea\u05d2\u05d5\u05d1\u05d4",
+        "\u05d1\u05e9\u05d9\u05d7\u05d4 \u05e4\u05e2\u05d9\u05dc\u05d4",
+        "\u05de\u05d9\u05d3\u05e2 \u05e0\u05d0\u05e1\u05e3",
+        "\u05d4\u05d5\u05e2\u05d1\u05e8 \u05dc\u05e0\u05e6\u05d9\u05d2",
+        "\u05d1\u05d5\u05d8\u05dc"
+      ],
+      "default": "\u05de\u05de\u05ea\u05d9\u05df \u05dc\u05ea\u05d2\u05d5\u05d1\u05d4",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1 \u05d4\u05ea\u05e7\u05d3\u05de\u05d5\u05ea \u05d1\u05d8\u05d9\u05e4\u05d5\u05dc \u05d4\u05d1\u05d5\u05d8"
+    },
+    "interested_in_representation": {
+      "type": "boolean",
+      "description": "\u05d4\u05d0\u05dd \u05de\u05e2\u05d5\u05e0\u05d9\u05d9\u05df \u05d1\u05d9\u05d9\u05e6\u05d5\u05d2 \u05de\u05e9\u05e4\u05d8\u05d9 \u05d1\u05de\u05d9\u05d3\u05d4 \u05d5\u05d9\u05d9\u05de\u05e6\u05d0\u05d5 \u05e2\u05d9\u05dc\u05d5\u05ea"
+    },
+    "last_bot_interaction": {
+      "type": "string",
+      "format": "date-time",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d4\u05d0\u05d9\u05e0\u05d8\u05e8\u05d0\u05e7\u05e6\u05d9\u05d4 \u05d4\u05d0\u05d7\u05e8\u05d5\u05e0\u05d4 \u05e2\u05dd \u05d4\u05d1\u05d5\u05d8"
+    }
+  },
+  "required": [
+    "full_name",
+    "phone"
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "name": "Invoice",
+  "type": "object",
+  "properties": {
+    "email_message_id": {
+      "type": "string",
+      "description": "\u05de\u05d6\u05d4\u05d4 \u05d4\u05d5\u05d3\u05e2\u05ea \u05d4\u05de\u05d9\u05d9\u05dc \u05d4\u05de\u05e7\u05d5\u05e8\u05d9\u05ea"
+    },
+    "invoice_number": {
+      "type": "string",
+      "description": "\u05de\u05e1\u05e4\u05e8 \u05d7\u05e9\u05d1\u05d5\u05e0\u05d9\u05ea"
+    },
+    "invoice_type": {
+      "type": "string",
+      "enum": [
+        "\u05d7\u05e9\u05d1\u05d5\u05e0\u05d9\u05ea \u05de\u05e1",
+        "\u05d7\u05e9\u05d1\u05d5\u05e0\u05d9\u05ea \u05de\u05e1 \u05e7\u05d1\u05dc\u05d4",
+        "\u05e7\u05d1\u05dc\u05d4",
+        "\u05d7\u05e9\u05d1\u05d5\u05e0\u05d9\u05ea \u05e2\u05e1\u05e7\u05d4",
+        "\u05d7\u05e9\u05d1\u05d5\u05e0\u05d9\u05ea",
+        "\u05d0\u05d7\u05e8"
+      ],
+      "description": "\u05e1\u05d5\u05d2 \u05d4\u05de\u05e1\u05de\u05da"
+    },
+    "vendor_name": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05d4\u05e1\u05e4\u05e7"
+    },
+    "vendor_id": {
+      "type": "string",
+      "description": "\u05d7.\u05e4 / \u05e2.\u05de \u05e9\u05dc \u05d4\u05e1\u05e4\u05e7"
+    },
+    "amount": {
+      "type": "number",
+      "description": "\u05e1\u05db\u05d5\u05dd \u05db\u05d5\u05dc\u05dc \u05de\u05e2\"\u05de"
+    },
+    "amount_before_vat": {
+      "type": "number",
+      "description": "\u05e1\u05db\u05d5\u05dd \u05dc\u05e4\u05e0\u05d9 \u05de\u05e2\"\u05de"
+    },
+    "vat_amount": {
+      "type": "number",
+      "description": "\u05e1\u05db\u05d5\u05dd \u05d4\u05de\u05e2\"\u05de"
+    },
+    "invoice_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d4\u05d7\u05e9\u05d1\u05d5\u05e0\u05d9\u05ea"
+    },
+    "email_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05e7\u05d1\u05dc\u05ea \u05d4\u05de\u05d9\u05d9\u05dc"
+    },
+    "email_subject": {
+      "type": "string",
+      "description": "\u05e0\u05d5\u05e9\u05d0 \u05d4\u05de\u05d9\u05d9\u05dc"
+    },
+    "email_sender": {
+      "type": "string",
+      "description": "\u05db\u05ea\u05d5\u05d1\u05ea \u05d4\u05e9\u05d5\u05dc\u05d7"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "\u05e7\u05d9\u05e9\u05d5\u05e8 \u05dc\u05e7\u05d5\u05d1\u05e5 PDF"
+    },
+    "file_name": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05d4\u05e7\u05d5\u05d1\u05e5"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "\u05d7\u05d3\u05e9",
+        "\u05de\u05e2\u05d5\u05d1\u05d3",
+        "\u05de\u05d0\u05d5\u05e9\u05e8",
+        "\u05e0\u05d3\u05d7\u05d4"
+      ],
+      "default": "\u05d7\u05d3\u05e9",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1"
+    },
+    "category": {
+      "type": "string",
+      "description": "\u05e7\u05d8\u05d2\u05d5\u05e8\u05d9\u05d4"
+    },
+    "notes": {
+      "type": "string",
+      "description": "\u05d4\u05e2\u05e8\u05d5\u05ea"
+    },
+    "linked_expense_id": {
+      "type": "string",
+      "description": "\u05de\u05d6\u05d4\u05d4 \u05d4\u05d4\u05d5\u05e6\u05d0\u05d4 \u05d4\u05de\u05e7\u05d5\u05e9\u05e8\u05ea"
+    },
+    "ai_extracted": {
+      "type": "boolean",
+      "default": false,
+      "description": "\u05d4\u05d0\u05dd \u05e0\u05e1\u05e8\u05e7 \u05d0\u05d5\u05d8\u05d5\u05de\u05d8\u05d9\u05ea"
+    },
+    "ai_confidence": {
+      "type": "number",
+      "description": "\u05e8\u05de\u05ea \u05d1\u05d9\u05d8\u05d7\u05d5\u05df \u05d4\u05e1\u05e8\u05d9\u05e7\u05d4 (0-100)"
+    }
+  },
+  "required": [
+    "file_url",
+    "email_date"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "name": "CaseMilestone",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "description": "\u05de\u05d6\u05d4\u05d4 \u05d4\u05ea\u05d9\u05e7 \u05d4\u05de\u05e7\u05d5\u05e9\u05e8"
+    },
+    "milestone_name": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05d0\u05d1\u05df \u05d4\u05d3\u05e8\u05da"
+    },
+    "milestone_type": {
+      "type": "string",
+      "enum": [
+        "\u05de\u05e1\u05d9\u05e8\u05d4 \u05d1\u05d3\u05d5\u05d0\u05e8 \u05e8\u05e9\u05d5\u05dd",
+        "\u05e2\u05d3\u05db\u05d5\u05df \u05de\u05e1\u05e4\u05e8 \u05ea\u05d9\u05e7 \u05de\u05d1\u05d9\u05ea \u05d4\u05de\u05e9\u05e4\u05d8",
+        "\u05e7\u05d1\u05dc\u05ea \u05db\u05ea\u05d1 \u05d4\u05d2\u05e0\u05d4",
+        "\u05ea\u05e6\u05d4\u05d9\u05e8 \u05d2\u05d9\u05dc\u05d5\u05d9 \u05de\u05e1\u05de\u05db\u05d9\u05dd",
+        "\u05ea\u05e6\u05d4\u05d9\u05e8\u05d9 \u05e2\u05d3\u05d5\u05ea \u05e8\u05d0\u05e9\u05d9\u05ea",
+        "\u05e7\u05d3\u05dd \u05de\u05e9\u05e4\u05d8",
+        "\u05d3\u05d9\u05d5\u05df \u05d4\u05d5\u05db\u05d7\u05d5\u05ea",
+        "\u05d4\u05d2\u05e9\u05ea \u05e1\u05d9\u05db\u05d5\u05de\u05d9\u05dd",
+        "\u05de\u05d5\u05ea\u05d0\u05dd \u05d0\u05d9\u05e9\u05d9\u05ea"
+      ],
+      "description": "\u05e1\u05d5\u05d2 \u05d0\u05d1\u05df \u05d4\u05d3\u05e8\u05da"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "\u05de\u05de\u05ea\u05d9\u05df",
+        "\u05d1\u05d1\u05d9\u05e6\u05d5\u05e2",
+        "\u05d4\u05d5\u05e9\u05dc\u05dd",
+        "\u05d1\u05d0\u05d9\u05d7\u05d5\u05e8"
+      ],
+      "default": "\u05de\u05de\u05ea\u05d9\u05df",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1 \u05d0\u05d1\u05df \u05d4\u05d3\u05e8\u05da"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d9\u05e2\u05d3"
+    },
+    "completion_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d4\u05e9\u05dc\u05de\u05d4 \u05d1\u05e4\u05d5\u05e2\u05dc"
+    },
+    "is_mandatory": {
+      "type": "boolean",
+      "default": true,
+      "description": "\u05d4\u05d0\u05dd \u05d7\u05d5\u05d1\u05d4?"
+    },
+    "notes": {
+      "type": "string",
+      "description": "\u05d4\u05e2\u05e8\u05d5\u05ea"
+    },
+    "order": {
+      "type": "number",
+      "default": 0,
+      "description": "\u05e1\u05d3\u05e8 \u05d4\u05e6\u05d2\u05d4"
+    }
+  },
+  "required": [
+    "case_id",
+    "milestone_name",
+    "status"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

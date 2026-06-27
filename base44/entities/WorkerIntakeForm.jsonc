@@ -1,0 +1,198 @@
+{
+  "name": "WorkerIntakeForm",
+  "type": "object",
+  "properties": {
+    "form_language": {
+      "type": "string",
+      "enum": [
+        "\u05e2\u05d1\u05e8\u05d9\u05ea",
+        "\u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+      ],
+      "default": "\u05e2\u05d1\u05e8\u05d9\u05ea",
+      "description": "\u05e9\u05e4\u05ea \u05de\u05d9\u05dc\u05d5\u05d9 \u05d4\u05d8\u05d5\u05e4\u05e1"
+    },
+    "full_name": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05de\u05dc\u05d0"
+    },
+    "id_number": {
+      "type": "string",
+      "description": "\u05ea\u05e2\u05d5\u05d3\u05ea \u05d6\u05d4\u05d5\u05ea"
+    },
+    "phone": {
+      "type": "string",
+      "description": "\u05d8\u05dc\u05e4\u05d5\u05df \u05e0\u05d9\u05d9\u05d3"
+    },
+    "address": {
+      "type": "string",
+      "description": "\u05db\u05ea\u05d5\u05d1\u05ea \u05de\u05d2\u05d5\u05e8\u05d9\u05dd"
+    },
+    "employer_name": {
+      "type": "string",
+      "description": "\u05e9\u05dd \u05d4\u05d7\u05d1\u05e8\u05d4 \u05e9\u05e2\u05d1\u05d3 \u05d1\u05d4"
+    },
+    "employer_business": {
+      "type": "string",
+      "description": "\u05ea\u05d7\u05d5\u05dd \u05e2\u05d9\u05e1\u05d5\u05e7 \u05d4\u05d7\u05d1\u05e8\u05d4"
+    },
+    "employer_phone": {
+      "type": "string",
+      "description": "\u05d8\u05dc\u05e4\u05d5\u05df \u05d4\u05de\u05e2\u05e1\u05d9\u05e7"
+    },
+    "job_description": {
+      "type": "string",
+      "description": "\u05ea\u05d9\u05d0\u05d5\u05e8 \u05d4\u05ea\u05e4\u05e7\u05d9\u05d3"
+    },
+    "payment_type": {
+      "type": "string",
+      "enum": [
+        "\u05e9\u05e2\u05ea\u05d9",
+        "\u05d7\u05d5\u05d3\u05e9\u05d9",
+        "\u05d9\u05d5\u05de\u05d9"
+      ],
+      "description": "\u05e1\u05d5\u05d2 \u05ea\u05e9\u05dc\u05d5\u05dd"
+    },
+    "salary_amount": {
+      "type": "number",
+      "description": "\u05d2\u05d5\u05d1\u05d4 \u05d4\u05e9\u05db\u05e8"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "\u05d1\u05de\u05d6\u05d5\u05de\u05df",
+        "\u05d4\u05e2\u05d1\u05e8\u05d4 \u05d1\u05e0\u05e7\u05d0\u05d9\u05ea",
+        "\u05d7\u05dc\u05e7 \u05d1\u05de\u05d6\u05d5\u05de\u05df \u05d5\u05d7\u05dc\u05e7 \u05d4\u05e2\u05d1\u05e8\u05d4 \u05d1\u05e0\u05e7\u05d0\u05d9\u05ea"
+      ],
+      "description": "\u05d0\u05d5\u05e4\u05df \u05d4\u05ea\u05e9\u05dc\u05d5\u05dd"
+    },
+    "received_payslips": {
+      "type": "boolean",
+      "description": "\u05d4\u05d0\u05dd \u05e7\u05d9\u05d1\u05dc \u05ea\u05dc\u05d5\u05e9\u05d9 \u05e9\u05db\u05e8"
+    },
+    "work_start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d4\u05ea\u05d7\u05dc\u05ea \u05e2\u05d1\u05d5\u05d3\u05d4"
+    },
+    "work_end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05e1\u05d9\u05d5\u05dd \u05e2\u05d1\u05d5\u05d3\u05d4"
+    },
+    "daily_hours_details": {
+      "type": "string",
+      "description": "\u05e4\u05d9\u05e8\u05d5\u05d8 \u05e9\u05e2\u05d5\u05ea \u05d4\u05e2\u05d1\u05d5\u05d3\u05d4 \u05d4\u05d9\u05d5\u05de\u05d9\u05d5\u05ea"
+    },
+    "weekly_days_details": {
+      "type": "string",
+      "description": "\u05e4\u05d9\u05e8\u05d5\u05d8 \u05d9\u05de\u05d9 \u05e2\u05d1\u05d5\u05d3\u05d4 \u05d1\u05e9\u05d1\u05d5\u05e2"
+    },
+    "termination_reason": {
+      "type": "string",
+      "description": "\u05e1\u05d9\u05d1\u05ea \u05e1\u05d9\u05d5\u05dd \u05d4\u05e2\u05d1\u05d5\u05d3\u05d4"
+    },
+    "termination_type": {
+      "type": "string",
+      "enum": [
+        "\u05e4\u05d5\u05d8\u05e8\u05ea\u05d9",
+        "\u05d4\u05ea\u05e4\u05d8\u05e8\u05ea\u05d9"
+      ],
+      "description": "\u05e1\u05d5\u05d2 \u05d4\u05e4\u05e1\u05e7\u05ea \u05e2\u05d1\u05d5\u05d3\u05d4"
+    },
+    "termination_explanation": {
+      "type": "string",
+      "description": "\u05d4\u05e1\u05d1\u05e8 \u05de\u05e4\u05d5\u05e8\u05d8 \u05dc\u05e1\u05d9\u05d5\u05dd"
+    },
+    "accommodation_details": {
+      "type": "string",
+      "description": "\u05e4\u05d9\u05e8\u05d5\u05d8 \u05ea\u05e0\u05d0\u05d9 \u05de\u05d2\u05d5\u05e8\u05d9\u05dd"
+    },
+    "had_work_permit": {
+      "type": "boolean",
+      "description": "\u05d4\u05d0\u05dd \u05d4\u05d9\u05d4 \u05d0\u05d9\u05e9\u05d5\u05e8 \u05e2\u05d1\u05d5\u05d3\u05d4"
+    },
+    "work_permit_payment": {
+      "type": "string",
+      "description": "\u05de\u05d9 \u05e9\u05d9\u05dc\u05dd \u05e2\u05dc \u05d0\u05d9\u05e9\u05d5\u05e8 \u05d4\u05e2\u05d1\u05d5\u05d3\u05d4"
+    },
+    "uploaded_documents": {
+      "type": "array",
+      "description": "\u05de\u05e1\u05de\u05db\u05d9\u05dd \u05e9\u05d4\u05d5\u05e2\u05dc\u05d5",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "size": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "fee_agreement_signature": {
+      "type": "string",
+      "description": "\u05d7\u05ea\u05d9\u05de\u05d4 \u05e2\u05dc \u05d4\u05e1\u05db\u05dd \u05e9\u05db\u05e8 \u05d8\u05e8\u05d7\u05d4 (base64)"
+    },
+    "power_of_attorney_signature": {
+      "type": "string",
+      "description": "\u05d7\u05ea\u05d9\u05de\u05d4 \u05e2\u05dc \u05d9\u05d9\u05e4\u05d5\u05d9 \u05db\u05d7 (base64)"
+    },
+    "submission_ip": {
+      "type": "string",
+      "description": "\u05db\u05ea\u05d5\u05d1\u05ea IP \u05e9\u05dc \u05d4\u05e9\u05d5\u05dc\u05d7"
+    },
+    "submission_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "\u05ea\u05d0\u05e8\u05d9\u05da \u05d5\u05e9\u05e2\u05ea \u05d4\u05d2\u05e9\u05d4"
+    },
+    "form_duration_seconds": {
+      "type": "number",
+      "description": "\u05d6\u05de\u05df \u05de\u05d9\u05dc\u05d5\u05d9 \u05d4\u05d8\u05d5\u05e4\u05e1 (\u05d1\u05e9\u05e0\u05d9\u05d5\u05ea)"
+    },
+    "user_agent": {
+      "type": "string",
+      "description": "\u05d3\u05e4\u05d3\u05e4\u05df \u05d5\u05de\u05db\u05e9\u05d9\u05e8"
+    },
+    "created_client_id": {
+      "type": "string",
+      "description": "\u05de\u05d6\u05d4\u05d4 \u05d4\u05dc\u05e7\u05d5\u05d7 \u05e9\u05e0\u05d5\u05e6\u05e8"
+    },
+    "created_case_id": {
+      "type": "string",
+      "description": "\u05de\u05d6\u05d4\u05d4 \u05d4\u05ea\u05d9\u05e7 \u05e9\u05e0\u05d5\u05e6\u05e8"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "\u05d8\u05d9\u05d5\u05d8\u05d4",
+        "\u05d4\u05d5\u05d2\u05e9",
+        "\u05d1\u05d8\u05d9\u05e4\u05d5\u05dc",
+        "\u05d8\u05d5\u05e4\u05dc"
+      ],
+      "default": "\u05d4\u05d5\u05d2\u05e9",
+      "description": "\u05e1\u05d8\u05d8\u05d5\u05e1 \u05d4\u05d8\u05d5\u05e4\u05e1"
+    }
+  },
+  "required": [
+    "full_name",
+    "id_number",
+    "phone",
+    "address"
+  ],
+  "rls": {
+    "create": {
+      "created_by": "{{user.email}}"
+    },
+    "read": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
