@@ -353,7 +353,14 @@ export const base44 = {
         return functions.invoke('send-sms', params);
       },
       async UploadFile(params) {
-        return functions.invoke('upload-file', params);
+        const file = params.file;
+        if (!file) throw new Error('No file provided');
+        const formData = new FormData();
+        formData.append('file', file);
+        const resp = await fetch('/api/upload-file', { method: 'POST', body: formData });
+        const json = await resp.json();
+        if (!resp.ok) throw new Error(json.error || 'Upload failed');
+        return json;
       },
       async GenerateImage(params) {
         return functions.invoke('generate-image', params);
