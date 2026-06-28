@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { PDFDocument } from "pdf-lib";
 
 const GREEN_INSTANCE = process.env.GREEN_API_INSTANCE;
 const GREEN_TOKEN = process.env.GREEN_API_TOKEN;
@@ -117,21 +118,69 @@ async function finalize(supabase, token, fieldValues) {
 
   const signatureData = fieldValues?.signature;
   let signedFileUrl = null;
+  let signatureImageUrl = null;
 
   if (signatureData) {
     const base64Data = signatureData.replace(/^data:image\/\w+;base64,/, "");
-    const buffer = Buffer.from(base64Data, "base64");
-    const fileName = `signatures/${req.id}-${Date.now()}.png`;
+    const sigBuffer = Buffer.from(base64Data, "base64");
+    const sigFileName = `signatures/${req.id}-${Date.now()}.png`;
 
     const { error: uploadError } = await supabase.storage
       .from("uploads")
-      .upload(fileName, buffer, { contentType: "image/png", upsert: true });
+      .upload(sigFileName, sigBuffer, { contentType: "image/png", upsert: true });
 
     if (!uploadError) {
       const { data: urlData } = supabase.storage
         .from("uploads")
-        .getPublicUrl(fileName);
-      signedFileUrl = urlData.publicUrl;
+        .getPublicUrl(sigFileName);
+      signatureImageUrl = urlData.publicUrl;
+    }
+
+    const originalUrl = req.original_file_url || req.original_url;
+    if (originalUrl && originalUrl.toLowerCase().endsWith(".pdf")) {
+      try {
+        const pdfResp = await fetch(originalUrl);
+        const pdfBytes = new Uint8Array(await pdfResp.arrayBuffer());
+        const pdfDoc = await PDFDocument.load(pdfBytes);
+        const pngImage = await pdfDoc.embedPng(sigBuffer);
+
+        const pages = pdfDoc.getPages();
+        const lastPage = pages[pages.length - 1];
+        const { width: pageW, height: pageH } = lastPage.getSize();
+
+        const sigW = Math.min(pngImage.width, pageW * 0.35);
+        const sigH = (pngImage.height / pngImage.width) * sigW;
+
+        lastPage.drawImage(pngImage, {
+          x: pageW * 0.1,
+          y: pageH * 0.05,
+          width: sigW,
+          height: sigH,
+        });
+
+        const signedPdfBytes = await pdfDoc.save();
+        const signedFileName = `signed/${req.id}-signed-${Date.now()}.pdf`;
+
+        const { error: pdfUploadError } = await supabase.storage
+          .from("uploads")
+          .upload(signedFileName, Buffer.from(signedPdfBytes), {
+            contentType: "application/pdf",
+            upsert: true,
+          });
+
+        if (!pdfUploadError) {
+          const { data: pdfUrlData } = supabase.storage
+            .from("uploads")
+            .getPublicUrl(signedFileName);
+          signedFileUrl = pdfUrlData.publicUrl;
+        }
+      } catch (pdfErr) {
+        console.error("[signatureOperations] PDF embedding failed:", pdfErr);
+      }
+    }
+
+    if (!signedFileUrl) {
+      signedFileUrl = signatureImageUrl;
     }
   }
 
@@ -143,6 +192,7 @@ async function finalize(supabase, token, fieldValues) {
       signed_at: new Date().toISOString(),
       signed_file_url: signedFileUrl,
       signed_url: signedFileUrl,
+      signature_image_url: signatureImageUrl,
       signature_fields: JSON.stringify(fieldValues),
     })
     .eq("id", req.id);
