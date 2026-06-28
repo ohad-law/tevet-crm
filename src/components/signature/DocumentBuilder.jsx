@@ -1,29 +1,36 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 import { Button } from "@/components/ui/button";
-import { 
-    Type, PenTool, Calendar, Hash, CheckSquare, Trash2, 
+import {
+    Type, PenTool, Calendar, Hash, CheckSquare, Trash2,
     Loader2, ZoomIn, ZoomOut, ChevronLeft, ChevronRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// Set worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+pdfjs.GlobalWorkerOptions.workerSrc = `/pdf.worker.min.mjs`;
 
 export default function DocumentBuilder({ fileUrl, fields, setFields }) {
     const [scale, setScale] = useState(1.0);
     const [numPages, setNumPages] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [isLoading, setIsLoading] = useState(true);
+    const [loadError, setLoadError] = useState(null);
     const [activeToolType, setActiveToolType] = useState(null);
     const pageContainerRef = useRef(null);
 
-    const onDocumentLoadSuccess = ({ numPages }) => {
+    const onDocumentLoadSuccess = useCallback(({ numPages }) => {
         setNumPages(numPages);
         setIsLoading(false);
-    };
+        setLoadError(null);
+    }, []);
+
+    const onDocumentLoadError = useCallback((error) => {
+        console.error("PDF load error:", error);
+        setIsLoading(false);
+        setLoadError(error?.message || "שגיאה בטעינת המסמך");
+    }, []);
 
     // Click on page to place field
     const handlePageClick = (e) => {
@@ -180,14 +187,16 @@ export default function DocumentBuilder({ fileUrl, fields, setFields }) {
                     <Document
                         file={fileUrl}
                         onLoadSuccess={onDocumentLoadSuccess}
+                        onLoadError={onDocumentLoadError}
                         loading={
                             <div className="flex items-center justify-center h-[600px] w-[500px] bg-white rounded shadow">
                                 <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
                             </div>
                         }
                         error={
-                            <div className="flex items-center justify-center h-[600px] w-[500px] bg-white rounded shadow text-red-500">
-                                שגיאה בטעינת המסמך
+                            <div className="flex flex-col items-center justify-center h-[600px] w-[500px] bg-white rounded shadow text-red-500 gap-2">
+                                <span>שגיאה בטעינת המסמך</span>
+                                {loadError && <span className="text-xs text-slate-400">{loadError}</span>}
                             </div>
                         }
                     >
