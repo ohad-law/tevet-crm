@@ -14,8 +14,8 @@ import { createPageUrl } from "@/utils";
 import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 
-const APP_BASE_URL = 'https://legal-flow-crm-1d774f3f.base44.app';
-const getSignatureLink = (req) => APP_BASE_URL + '/signdocument?token=' + req.access_token;
+const APP_BASE_URL = window.location.origin;
+const getSignatureLink = (req) => APP_BASE_URL + '/SignDocument?token=' + (req.access_token || req.token);
 
 export default function SignatureDashboard() {
     const navigate = useNavigate();
