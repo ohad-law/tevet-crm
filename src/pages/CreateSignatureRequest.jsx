@@ -60,8 +60,9 @@ export default function CreateSignatureRequest() {
             // 1. Create Request
             const request = await base44.entities.SignatureRequest.create({
                 ...basicInfo,
-                client_id: "temp-id", // In a real flow we'd select a client
+                client_id: null,
                 status: "draft",
+                original_url: fileUrl,
                 original_file_url: fileUrl,
                 access_token: crypto.randomUUID()
             });
