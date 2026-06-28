@@ -58,13 +58,15 @@ export default function CreateSignatureRequest() {
         setIsLoading(true);
         try {
             // 1. Create Request
+            const tokenVal = crypto.randomUUID();
             const request = await base44.entities.SignatureRequest.create({
                 ...basicInfo,
                 client_id: null,
                 status: "draft",
                 original_url: fileUrl,
                 original_file_url: fileUrl,
-                access_token: crypto.randomUUID()
+                token: tokenVal,
+                access_token: tokenVal
             });
 
             // 2. Create Fields
