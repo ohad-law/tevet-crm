@@ -182,7 +182,7 @@ export default function SignatureDashboard() {
                                                 </Badge>
                                             </TableCell>
                                             <TableCell className="text-slate-500 text-sm">
-                                                {format(new Date(req.created_date), "dd/MM/yyyy HH:mm")}
+                                                {format(new Date(req.created_at), "dd/MM/yyyy HH:mm")}
                                             </TableCell>
                                             <TableCell>
                                                 <div className="flex gap-2">

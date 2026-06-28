@@ -63,8 +63,7 @@ export default function CreateSignatureRequest() {
                 client_id: "temp-id", // In a real flow we'd select a client
                 status: "draft",
                 original_file_url: fileUrl,
-                access_token: crypto.randomUUID(), // Simple token generation
-                created_date: new Date().toISOString()
+                access_token: crypto.randomUUID()
             });
 
             // 2. Create Fields
