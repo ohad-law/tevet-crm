@@ -183,6 +183,7 @@ export default function CreateSignatureRequest() {
                                                 return;
                                             }
                                             setStep(2);
+                                            window.scrollTo({ top: 0, behavior: 'smooth' });
                                         }}
                                         className="w-full bg-blue-600 hover:bg-blue-700"
                                     >
