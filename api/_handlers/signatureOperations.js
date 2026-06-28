@@ -139,24 +139,48 @@ async function finalize(supabase, token, fieldValues) {
     const originalUrl = req.original_file_url || req.original_url;
     if (originalUrl && originalUrl.toLowerCase().endsWith(".pdf")) {
       try {
+        const { data: sigFields } = await supabase
+          .from("signature_fields")
+          .select("*")
+          .eq("request_id", req.id)
+          .eq("type", "signature");
+
         const pdfResp = await fetch(originalUrl);
         const pdfBytes = new Uint8Array(await pdfResp.arrayBuffer());
         const pdfDoc = await PDFDocument.load(pdfBytes);
         const pngImage = await pdfDoc.embedPng(sigBuffer);
-
         const pages = pdfDoc.getPages();
-        const lastPage = pages[pages.length - 1];
-        const { width: pageW, height: pageH } = lastPage.getSize();
 
-        const sigW = Math.min(pngImage.width, pageW * 0.35);
-        const sigH = (pngImage.height / pngImage.width) * sigW;
+        if (sigFields && sigFields.length > 0) {
+          for (const field of sigFields) {
+            const pageIdx = Math.max(0, (field.page || 1) - 1);
+            const page = pages[Math.min(pageIdx, pages.length - 1)];
+            const { width: pageW, height: pageH } = page.getSize();
 
-        lastPage.drawImage(pngImage, {
-          x: pageW * 0.1,
-          y: pageH * 0.05,
-          width: sigW,
-          height: sigH,
-        });
+            const sigW = (field.width / 100) * pageW;
+            const sigH = (pngImage.height / pngImage.width) * sigW;
+            const sigX = (field.x / 100) * pageW;
+            const sigY = pageH - ((field.y / 100) * pageH) - sigH;
+
+            page.drawImage(pngImage, {
+              x: sigX,
+              y: sigY,
+              width: sigW,
+              height: sigH,
+            });
+          }
+        } else {
+          const lastPage = pages[pages.length - 1];
+          const { width: pageW, height: pageH } = lastPage.getSize();
+          const sigW = Math.min(pngImage.width * 0.4, pageW * 0.25);
+          const sigH = (pngImage.height / pngImage.width) * sigW;
+          lastPage.drawImage(pngImage, {
+            x: pageW * 0.1,
+            y: pageH * 0.08,
+            width: sigW,
+            height: sigH,
+          });
+        }
 
         const signedPdfBytes = await pdfDoc.save();
         const signedFileName = `signed/${req.id}-signed-${Date.now()}.pdf`;
