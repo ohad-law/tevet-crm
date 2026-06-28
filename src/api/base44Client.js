@@ -325,7 +325,7 @@ const auth = {
 // Functions shim — calls our Vercel API routes at /api/<functionName>
 const functions = {
   async invoke(functionName, args) {
-    const resp = await fetch(`/api/${functionName}`, {
+    const resp = await fetch(`/api/fn/${functionName}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(args),
