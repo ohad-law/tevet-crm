@@ -157,9 +157,19 @@ async function finalize(supabase, token, fieldValues) {
             const page = pages[Math.min(pageIdx, pages.length - 1)];
             const { width: pageW, height: pageH } = page.getSize();
 
-            const sigW = (field.width / 100) * pageW;
-            const sigH = (pngImage.height / pngImage.width) * sigW;
-            const sigX = (field.x / 100) * pageW;
+            const fieldW = (field.width / 100) * pageW;
+            const fieldH = ((field.height || 5) / 100) * pageH;
+            const imgRatio = pngImage.height / pngImage.width;
+
+            let sigW = fieldW;
+            let sigH = imgRatio * sigW;
+
+            if (sigH > fieldH) {
+              sigH = fieldH;
+              sigW = sigH / imgRatio;
+            }
+
+            const sigX = (field.x / 100) * pageW + (fieldW - sigW) / 2;
             const sigY = pageH - ((field.y / 100) * pageH) - sigH;
 
             page.drawImage(pngImage, {
@@ -172,11 +182,18 @@ async function finalize(supabase, token, fieldValues) {
         } else {
           const lastPage = pages[pages.length - 1];
           const { width: pageW, height: pageH } = lastPage.getSize();
-          const sigW = Math.min(pngImage.width * 0.4, pageW * 0.25);
-          const sigH = (pngImage.height / pngImage.width) * sigW;
+          const maxW = pageW * 0.2;
+          const maxH = pageH * 0.05;
+          const imgRatio = pngImage.height / pngImage.width;
+          let sigW = maxW;
+          let sigH = imgRatio * sigW;
+          if (sigH > maxH) {
+            sigH = maxH;
+            sigW = sigH / imgRatio;
+          }
           lastPage.drawImage(pngImage, {
-            x: pageW * 0.1,
-            y: pageH * 0.08,
+            x: pageW * 0.6,
+            y: pageH * 0.12,
             width: sigW,
             height: sigH,
           });
