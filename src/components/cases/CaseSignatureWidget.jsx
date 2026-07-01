@@ -12,8 +12,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-const APP_BASE_URL = 'https://legal-flow-crm-1d774f3f.base44.app';
-const getSignatureLink = (request) => `${APP_BASE_URL}/signdocument?token=${request.access_token}`;
+const APP_BASE_URL = 'https://tevet-crm.vercel.app';
+const getSignatureLink = (request) => `${APP_BASE_URL}/SignDocument?token=${request.access_token}`;
 
 export default function CaseSignatureWidget({ caseId, clientId, clientName, clientPhone, clientEmail }) {
     const [requests, setRequests] = useState([]);
