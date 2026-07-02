@@ -8,6 +8,8 @@ const handlers = {
   facebookAdsAI: () => import('../_handlers/facebookAdsAI.js'),
   generateViralScript: () => import('../_handlers/generateViralScript.js'),
   signatureOperations: () => import('../_handlers/signatureOperations.js'),
+  googleDriveV2: () => import('../_handlers/googleDriveV2.js'),
+  googleCalendar: () => import('../_handlers/googleCalendar.js'),
 };
 
 export default async function handler(req, res) {
